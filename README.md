@@ -7,7 +7,9 @@ This project will be completed through the Intellij application. Here I will be 
 reference changes made for parts C-J and where to locate them.
 
 C.  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
-
+- changed title on line 14 to "My Sandwich Shop"
+- changed shop name on line 19 to "Breaking Bread"
+- added products and parts
 
 Note: Do not remove any elements that were included in the screen. You may add any additional elements you would like or any images, colors, and styles, although it is not required.
 
