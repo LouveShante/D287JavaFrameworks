@@ -11,16 +11,15 @@ C.  Customize the HTML user interface for your customer’s application. The use
 - changed shop name on line 19 to "Breaking Bread"
 - added products and parts
 
-Note: Do not remove any elements that were included in the screen. You may add any additional elements you would like or any images, colors, and styles, although it is not required.
-
 
 D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
-
+- added about.html to templates
+- added a button to the About Us webpage on the mainscreen. line 20
+- added a button to the mainscreen, titled "Home" to the about us page. line 16
+- added an AboutController file in the controllers folder to map the webpages
 
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
 
-
-Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part.
 
 
 F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
