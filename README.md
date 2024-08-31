@@ -20,15 +20,18 @@ D.  Add an “About” page to the application to describe your chosen customer�
 - added an AboutController file in the controllers folder to map the webpages
 
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
--added 5 parts to bootstrap file - lines 45-91
--added 5 products to bootstrap file - lines 93-104
+- added 5 parts to bootstrap file - lines 45-91
+- added 5 products to bootstrap file - lines 93-104
 
 
 F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
 •  The “Buy Now” button must be next to the buttons that update and delete products.
 •  The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
 •  Display a message that indicates the success or failure of a purchase.
-
+- added buy now button next to update and delete buttons to mainscreen - line 87-88
+- added purchaseconfirmation html file to include purchase successful output
+- added outofstock html file to include out of stock output for failures
+- added buyproduct controller to map button to purchase confirmation and out of stock
 
 G.  Modify the parts to track maximum and minimum inventory by doing the following:
 •  Add additional fields to the part entity for maximum and minimum inventory.
