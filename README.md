@@ -9,7 +9,8 @@ reference changes made for parts C-J and where to locate them.
 C.  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
 - changed title on line 14 to "My Sandwich Shop"
 - changed shop name on line 19 to "Breaking Bread"
-- added products and parts
+- changed "Parts" on line 22 to "Build Your Own Sandwich"
+- changed "Products" on line 54 to "Sandwiches"
 
 
 D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
@@ -19,7 +20,8 @@ D.  Add an “About” page to the application to describe your chosen customer�
 - added an AboutController file in the controllers folder to map the webpages
 
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
-
+-added 5 parts to bootstrap file - lines 45-91
+-added 5 products to bootstrap file - lines 93-104
 
 
 F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
