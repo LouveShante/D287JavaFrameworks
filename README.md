@@ -56,6 +56,7 @@ H.  Add validation for between or at the maximum and minimum fields. The validat
 - modified part file to apply minimum and maximum validators - lines 3-4, 20-21
 
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
-
+added two test to PartTest to check that the inventory is within the minimum and maximum values - lines 41-57
 
 J.  Remove the class files for any unused validators in order to clean your code.
+- deleted DeletePartValidation and ValidDelete validators
