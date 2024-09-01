@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Project: demoDarbyFrameworks2-master
@@ -34,6 +36,24 @@ class PartTest {
         assertEquals(partIn.getId(), idValue);
         partOut.setId(idValue);
         assertEquals(partOut.getId(), idValue);
+    }
+
+    @Test
+    void testInventoryWithinBounds() {
+        partIn.setInv(5);
+        assertTrue(Part.invIsValid(partIn.getInv()), "Inventory should be valid when within bounds.");
+
+        partOut.setInv(10);
+        assertTrue(Part.invIsValid(partOut.getInv()), "Inventory should be valid when exactly at the maximum.");
+    }
+
+    @Test
+    void testInventoryOutOfBounds() {
+        partIn.setInv(0);
+        assertFalse(Part.invIsValid(partIn.getInv()), "Inventory should be invalid when below the minimum.");
+
+        partOut.setInv(11);
+        assertFalse(Part.invIsValid(partOut.getInv()), "Inventory should be invalid when above the maximum.");
     }
 
     @Test
