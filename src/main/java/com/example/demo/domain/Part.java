@@ -1,9 +1,11 @@
 package com.example.demo.domain;
 
-import com.example.demo.validators.ValidDeletePart;
+import com.example.demo.validators.ValidMaximum;
+import com.example.demo.validators.ValidMinimum;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.Max;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,7 +17,8 @@ import java.util.Set;
  *
  */
 @Entity
-@ValidDeletePart
+@ValidMinimum
+@ValidMaximum
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="part_type",discriminatorType = DiscriminatorType.INTEGER)
 @Table(name="Parts")
@@ -28,6 +31,10 @@ public abstract class Part implements Serializable {
     double price;
     @Min(value = 0, message = "Inventory value must be positive")
     int inv;
+    @Min(value = 0, message = "Inventory value must be positive")
+    private static int invMin;
+    @Min(value = 0, message = "Inventory value must be positive")
+    private static int invMax;
 
     @ManyToMany
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
@@ -41,6 +48,7 @@ public abstract class Part implements Serializable {
         this.name = name;
         this.price = price;
         this.inv = inv;
+
     }
 
     public Part(long id, String name, double price, int inv) {
@@ -78,6 +86,7 @@ public abstract class Part implements Serializable {
         return inv;
     }
 
+
     public void setInv(int inv) {
         this.inv = inv;
     }
@@ -106,5 +115,48 @@ public abstract class Part implements Serializable {
     @Override
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
+    }
+    public Part(int invMin, int invMax) {
+        this.invMin = invMin;
+        this.invMax = invMax;
+    }
+
+    public int getInvMin() {
+        return invMin;
+    }
+
+    public void setInvMin(int invMin) {
+        this.invMin = invMin;
+    }
+
+    public int getInvMax() {
+        return invMax;
+    }
+
+    public void setInvMax(int invMax) {
+        this.invMax = invMax;
+    }
+
+    public static boolean invIsValid(int inv) {
+        if (inv >= invMin && inv <= invMax) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public static boolean atLowerBounds(int inv) {
+        if(inv <= (invMin - 1)){
+            return false;
+        }
+        else { return true; }
+    }
+
+    public static boolean atUpperBounds(int inv) {
+        if (inv > invMax) {
+            return false;
+        }
+        else { return true; }
+
+
     }
 }

@@ -39,7 +39,13 @@ G.  Modify the parts to track maximum and minimum inventory by doing the followi
 •  Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.
 •  Rename the file the persistent storage is saved to.
 •  Modify the code to enforce that the inventory is between or at the minimum and maximum value.
-
+- added two Min values to Part java file - lines 32-35
+- created getter and setter methods for minInv and maxInv to Part java file - line 115-130
+- added minInv and maxInv to each part in the bootstrap file - lines 52-53. 62-63, 71-72, 80-81, 89-90
+- added additional text to InhousePartForm for minInv and maxInv - lines 24-28
+- added additional text to OutsourcedPartForm for minInv and maxInv - lines 25-29
+- modified the application.properties url to jdbc:h2:file:~/sandwiches-products-db - line 6
+- modified code in part.java to enforce min and max values - lines 136-154
 
 H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:
 •  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.
