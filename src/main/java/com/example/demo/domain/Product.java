@@ -1,5 +1,6 @@
 package com.example.demo.domain;
 
+
 import com.example.demo.validators.ValidEnufParts;
 import com.example.demo.validators.ValidProductPrice;
 

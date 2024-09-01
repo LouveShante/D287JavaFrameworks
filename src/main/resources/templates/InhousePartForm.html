@@ -29,6 +29,12 @@
 
     <p><input type="text" th:field="*{partId}" placeholder="Part ID" class="form-control mb-4 col-4"/></p>
 
+    <div th:if="${#fields.hasErrors()}">
+        <ul>
+            <li th:each="err : ${#fields.allErrors()}" th:text="${err}" class="error"/>
+        </ul>
+    </div>
+
     <p><input type="submit" value="Submit" /></p>
 </form>
 <p><errors path="price" cssClass=""error/><p>

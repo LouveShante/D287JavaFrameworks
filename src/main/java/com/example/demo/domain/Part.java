@@ -56,6 +56,8 @@ public abstract class Part implements Serializable {
         this.name = name;
         this.price = price;
         this.inv = inv;
+        this.invMin = invMin;
+        this.invMax = invMax;
     }
 
     public long getId() {
@@ -91,6 +93,23 @@ public abstract class Part implements Serializable {
         this.inv = inv;
     }
 
+    public int getInvMin() {
+        return invMin;
+    }
+
+    public void setInvMin(int invMin) {
+        this.invMin = invMin;
+    }
+
+    public int getInvMax() {
+        return invMax;
+    }
+
+    public void setInvMax(int invMax) {
+        this.invMax = invMax;
+    }
+
+
     public Set<Product> getProducts() {
         return products;
     }
@@ -116,26 +135,7 @@ public abstract class Part implements Serializable {
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
     }
-    public Part(int invMin, int invMax) {
-        this.invMin = invMin;
-        this.invMax = invMax;
-    }
 
-    public int getInvMin() {
-        return invMin;
-    }
-
-    public void setInvMin(int invMin) {
-        this.invMin = invMin;
-    }
-
-    public int getInvMax() {
-        return invMax;
-    }
-
-    public void setInvMax(int invMax) {
-        this.invMax = invMax;
-    }
 
     public static boolean invIsValid(int inv) {
         if (inv >= invMin && inv <= invMax) {
